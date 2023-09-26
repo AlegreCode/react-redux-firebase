@@ -14,14 +14,14 @@ function App() {
         </div>
         <div className='row'>
           <div className='col-12 col-lg-8 mx-auto'>
-            <h2 className="display-5 text-center">Nuevo contacto</h2>
+            <h2 className="display-6 text-center">Nuevo contacto</h2>
             <NewContactForm />
             <hr />
           </div>
         </div>
         <div className='row'>
           <div className='col-12 col-lg-8 mx-auto'>
-            <h2 className="display-5 text-center">Contactos</h2>
+            <h2 className="display-6 text-center">Contactos</h2>
             <ContactList />
             <hr />
           </div>
