@@ -14,6 +14,7 @@ function App() {
         <div className='row'>
           <div className='col-12'>
             <NewContactForm />
+            <hr />
           </div>
         </div>
       </main>
