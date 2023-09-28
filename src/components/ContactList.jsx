@@ -37,7 +37,7 @@ export const ContactList = () => {
                 </thead>
                 <tbody>
                     { data.map(contact => (
-                        <Contact key={contact.id} contact={contact} />
+                        <Contact key={contact.id} data={contact} />
                     )) }
                 </tbody>
             </table>
