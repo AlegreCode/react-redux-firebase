@@ -1,4 +1,42 @@
+const data = [{
+    id: 1,
+    firstname: 'Mark',
+    lastname: 'Otto',
+    phone: '3323233',
+    email: 'info@email.com.ar'
+},{
+    id: 2,
+    firstname: 'Jacob',
+    lastname: 'Thornton',
+    phone: '3323233',
+    email: 'info@email.com.ar'
+},{
+    id: 3,
+    firstname: 'Larry',
+    lastname: 'Bird',
+    phone: '3323233',
+    email: 'info@email.com.ar'
+}]
+
 export const ContactList = () => {
+
+    
+        const render = data.map((contact) => {
+            return (
+                <tr key={contact.id}>
+                    <th scope="row">{contact.id}</th>
+                    <td>{contact.firstname}</td>
+                    <td>{contact.lastname}</td>
+                    <td>{contact.phone}</td>
+                    <td>{contact.email}</td>
+                    <td>
+                        <button className="btn btn-sm btn-success me-2">Editar</button>
+                        <button className="btn btn-sm btn-danger">Borrar</button>
+                    </td>
+                </tr>
+            )
+        })
+
     return (
         <>
             <table className="table">
@@ -13,28 +51,7 @@ export const ContactList = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>3323233</td>
-                        <td>info@email.com.ar</td>
-                        <td>
-                            <button className="btn btn-sm btn-success me-2">Editar</button>
-                            <button className="btn btn-sm btn-danger">Borrar</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>3232323</td>
-                        <td>info@email.com.ar</td>
-                        <td>
-                            <button className="btn btn-sm btn-success me-2">Editar</button>
-                            <button className="btn btn-sm btn-danger">Borrar</button>
-                        </td>
-                    </tr>
+                    { render}
                 </tbody>
             </table>
         </>
