@@ -18,18 +18,6 @@ const data = [{
     lastname: 'Bird',
     phone: '3323233',
     email: 'info@email.com.ar'
-},{
-    id: 4,
-    firstname: 'Larry',
-    lastname: 'Bird',
-    phone: '3323233',
-    email: 'info@email.com.ar'
-},{
-    id: 5,
-    firstname: 'Larry',
-    lastname: 'Bird',
-    phone: '3323233',
-    email: 'info@email.com.ar'
 }]
 
 export const ContactList = () => {
