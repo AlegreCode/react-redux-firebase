@@ -1,3 +1,5 @@
+import { Contact } from "./Contact"
+
 const data = [{
     id: 1,
     firstname: 'Mark',
@@ -16,26 +18,21 @@ const data = [{
     lastname: 'Bird',
     phone: '3323233',
     email: 'info@email.com.ar'
+},{
+    id: 4,
+    firstname: 'Larry',
+    lastname: 'Bird',
+    phone: '3323233',
+    email: 'info@email.com.ar'
+},{
+    id: 5,
+    firstname: 'Larry',
+    lastname: 'Bird',
+    phone: '3323233',
+    email: 'info@email.com.ar'
 }]
 
 export const ContactList = () => {
-
-    
-        const render = data.map((contact) => {
-            return (
-                <tr key={contact.id}>
-                    <th scope="row">{contact.id}</th>
-                    <td>{contact.firstname}</td>
-                    <td>{contact.lastname}</td>
-                    <td>{contact.phone}</td>
-                    <td>{contact.email}</td>
-                    <td>
-                        <button className="btn btn-sm btn-success me-2">Editar</button>
-                        <button className="btn btn-sm btn-danger">Borrar</button>
-                    </td>
-                </tr>
-            )
-        })
 
     return (
         <>
@@ -51,7 +48,9 @@ export const ContactList = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    { render}
+                    { data.map(contact => (
+                        <Contact key={contact.id} contact={contact} />
+                    )) }
                 </tbody>
             </table>
         </>
