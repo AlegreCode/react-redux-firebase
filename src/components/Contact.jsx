@@ -18,20 +18,6 @@ export const Contact = ({ data }) => {
 
     if (!edit) {
         return (
-            <tr key={data.id}>
-                <th scope="row">{contact.id}</th>
-                <td><input type="text" className="form-control form-control-sm" value={contact.firstname}/></td>
-                <td><input type="text" className="form-control form-control-sm" value={contact.lastname}/></td>
-                <td><input type="text" className="form-control form-control-sm" value={contact.email}/></td>
-                <td><input type="text" className="form-control form-control-sm" value={contact.phone}/></td>
-                <td>
-                    <button className="btn btn-sm btn-success me-2" onClick={editHandle}>EDITAR</button>
-                    <button className="btn btn-sm btn-danger" onClick={editHandle}>BORRAR</button>
-                </td>
-            </tr>
-        )
-    }else{
-        return (
             <tr key={contact.id}>
                 <th scope="row">{contact.id}</th>
                 <td>{contact.firstname}</td>
@@ -41,6 +27,20 @@ export const Contact = ({ data }) => {
                 <td>
                     <button className="btn btn-sm btn-success me-2" onClick={editHandle}>GUARDAR</button>
                     <button className="btn btn-sm btn-danger" onClick={editHandle}>CANCELAR</button>
+                </td>
+            </tr>
+        )
+    }else{
+        return (
+            <tr key={data.id}>
+                <th scope="row">{contact.id}</th>
+                <td><input type="text" className="form-control form-control-sm" value={contact.firstname}/></td>
+                <td><input type="text" className="form-control form-control-sm" value={contact.lastname}/></td>
+                <td><input type="text" className="form-control form-control-sm" value={contact.email}/></td>
+                <td><input type="text" className="form-control form-control-sm" value={contact.phone}/></td>
+                <td>
+                    <button className="btn btn-sm btn-success me-2" onClick={editHandle}>EDITAR</button>
+                    <button className="btn btn-sm btn-danger" onClick={editHandle}>BORRAR</button>
                 </td>
             </tr>
         )
