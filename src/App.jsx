@@ -20,7 +20,7 @@ function App() {
           </div>
         </div>
         <div className='row'>
-          <div className='col-12 mx-auto'>
+          <div className='col-12 col-xl-8 mx-auto'>
             <h2 className="display-6 text-center">Contactos</h2>
             <ContactList />
             <hr />
