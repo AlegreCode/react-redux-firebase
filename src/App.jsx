@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-      <main className='container'>
+      <main className='container-fluid'>
         <div className='row'>
           <div className='col-12 col-lg-8 mx-auto'>
             <h1 className='display-2 text-center'>AGENDA</h1>
@@ -20,7 +20,7 @@ function App() {
           </div>
         </div>
         <div className='row'>
-          <div className='col-12 col-lg-8 mx-auto'>
+          <div className='col-12 mx-auto'>
             <h2 className="display-6 text-center">Contactos</h2>
             <ContactList />
             <hr />
