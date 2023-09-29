@@ -26,7 +26,7 @@ export const Contact = ({ data }) => {
                 <td>{contact.email}</td>
                 <td>
                     <button className="btn btn-sm btn-success" onClick={editHandle}>EDITAR</button>
-                    <button className="btn btn-sm btn-danger" onClick={editHandle}>BORRAR</button>
+                    <button className="btn btn-sm btn-danger">BORRAR</button>
                 </td>
             </tr>
         )
@@ -40,7 +40,7 @@ export const Contact = ({ data }) => {
                 <td><input type="text" className="form-control form-control-sm" value={contact.phone}/></td>
                 <td>
                     <button className="btn btn-sm btn-danger" onClick={editHandle}>CANCELAR</button>
-                    <button className="btn btn-sm btn-success" onClick={editHandle}>GUARDAR</button>
+                    <button className="btn btn-sm btn-primary">GUARDAR</button>
                 </td>
             </tr>
         )
