@@ -16,6 +16,18 @@ export const Contact = ({ data }) => {
         setEdit(!edit)
     }
 
+    const inputHandle = (e) => {
+        setContact({
+           ...contact,
+            [e.target.name]: e.target.value
+        })
+    }
+
+    const saveHandle = () => {
+        console.log(contact)
+        setEdit(!edit)
+    }
+
     if (!edit) {
         return (
             <tr key={contact.id}>
@@ -34,13 +46,29 @@ export const Contact = ({ data }) => {
         return (
             <tr key={data.id}>
                 <th scope="row">{contact.id}</th>
-                <td><input type="text" className="form-control form-control-sm" value={contact.firstname}/></td>
-                <td><input type="text" className="form-control form-control-sm" value={contact.lastname}/></td>
-                <td><input type="text" className="form-control form-control-sm" value={contact.email}/></td>
-                <td><input type="text" className="form-control form-control-sm" value={contact.phone}/></td>
+                <td><input type="text"
+                            name="firstname"
+                            className="form-control form-control-sm" 
+                            value={contact.firstname}
+                            onChange={inputHandle}/></td>
+                <td><input type="text"
+                            name="lastname"
+                            className="form-control form-control-sm" 
+                            value={contact.lastname}
+                            onChange={inputHandle}/></td>
+                <td><input type="text"
+                            name="email"
+                            className="form-control form-control-sm" 
+                            value={contact.email}
+                            onChange={inputHandle}/></td>
+                <td><input type="text"
+                            name="phone"
+                            className="form-control form-control-sm" 
+                            value={contact.phone}
+                            onChange={inputHandle}/></td>
                 <td>
                     <button className="btn btn-sm btn-danger" onClick={editHandle}>CANCELAR</button>
-                    <button className="btn btn-sm btn-primary">GUARDAR</button>
+                    <button className="btn btn-sm btn-primary" onClick={saveHandle}>GUARDAR</button>
                 </td>
             </tr>
         )
