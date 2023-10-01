@@ -23,24 +23,22 @@ const data = [{
 export const ContactList = () => {
 
     return (
-        <>
-            <table className="table">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Firstname</th>
-                        <th scope="col">Lastname</th>
-                        <th scope="col">Phone number</th>
-                        <th scope="col">E-mail</th>
-                        <th scope="col">Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    { data.map(contact => (
-                        <Contact key={contact.id} data={contact} />
-                    )) }
-                </tbody>
-            </table>
-        </>
+        <table className="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Firstname</th>
+                    <th scope="col">Lastname</th>
+                    <th scope="col">Phone number</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                { data.map(contact => (
+                    <Contact key={contact.id} data={contact} />
+                )) }
+            </tbody>
+        </table>
     )
 }
