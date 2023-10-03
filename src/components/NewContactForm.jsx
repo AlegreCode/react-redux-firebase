@@ -1,6 +1,10 @@
 import { useRef } from "react"
+import { useDispatch } from "react-redux"
+import { addContact } from "../features/contacts/contactsSlice"
 
 export const NewContactForm = () => {
+    const dispatch = useDispatch()
+
     const inputFirstname = useRef(null)
     const inputLastname = useRef(null)
     const inputPhone = useRef(null)
@@ -12,14 +16,7 @@ export const NewContactForm = () => {
         const phone = inputPhone.current.value
         const email = inputEmail.current.value
 
-        const contact = {
-            firstname,
-            lastname,
-            phone,
-            email
-        }
-
-        console.log(contact)
+        dispatch(addContact(firstname, lastname, phone, email))
 
         inputFirstname.current.value = ""
         inputLastname.current.value = ""
