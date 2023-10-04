@@ -1,26 +1,29 @@
+import { useSelector } from "react-redux"
 import { Contact } from "./Contact"
+import { selectContacts } from "../features/contacts/contactsSlice"
 
-const data = [{
-    id: 1,
-    firstname: 'Mark',
-    lastname: 'Otto',
-    phone: '3323233',
-    email: 'info@email.com.ar'
-},{
-    id: 2,
-    firstname: 'Jacob',
-    lastname: 'Thornton',
-    phone: '3323233',
-    email: 'info@email.com.ar'
-},{
-    id: 3,
-    firstname: 'Larry',
-    lastname: 'Bird',
-    phone: '3323233',
-    email: 'info@email.com.ar'
-}]
+// const data = [{
+//     id: 1,
+//     firstname: 'Mark',
+//     lastname: 'Otto',
+//     phone: '3323233',
+//     email: 'info@email.com.ar'
+// },{
+//     id: 2,
+//     firstname: 'Jacob',
+//     lastname: 'Thornton',
+//     phone: '3323233',
+//     email: 'info@email.com.ar'
+// },{
+//     id: 3,
+//     firstname: 'Larry',
+//     lastname: 'Bird',
+//     phone: '3323233',
+//     email: 'info@email.com.ar'
+// }]
 
 export const ContactList = () => {
+    const data = useSelector(state => selectContacts(state))
 
     return (
         <table className="table">
