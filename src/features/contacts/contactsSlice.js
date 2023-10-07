@@ -21,13 +21,15 @@ export const contactsSlice = createSlice({
                     }
                 }
             }
-        }
+        },
+        removeContact: contactsAdapter.removeOne,
+        updateContact: contactsAdapter.updateOne,
     },
 })
 
 export default contactsSlice.reducer
 
-export const { addContact } = contactsSlice.actions
+export const { addContact, removeContact, updateContact } = contactsSlice.actions
 
 export const { selectAll: selectContacts } = contactsAdapter.getSelectors(
     (state) => state.contacts
