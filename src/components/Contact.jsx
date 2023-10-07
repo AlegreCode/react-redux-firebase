@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
+import { removeContact, updateContact } from "../features/contacts/contactsSlice"
+import { useDispatch } from "react-redux"
 
 export const Contact = ({ data }) => {
-  const [edit, setEdit] = useState(false);
+  const [edit, setEdit] = useState(false)
+  const dispatch = useDispatch();
 
   const [contact, setContact] = useState({
     id: data.id,
@@ -30,10 +33,13 @@ export const Contact = ({ data }) => {
   };
 
   const handleSave = () => {
-    // Aquí puedes realizar la lógica para guardar los cambios
-    console.log("Contacto actualizado:", contact);
-    toggleEdit(); // Cambiar el modo de edición
-  };
+    dispatch(updateContact({ id:contact.id, changes: contact}))
+    toggleEdit();
+  }
+
+  const handleRemove = () => {
+    dispatch(removeContact(contact.id));
+  }
 
   return (
       <>
@@ -47,7 +53,7 @@ export const Contact = ({ data }) => {
             <button className="btn btn-sm btn-success" onClick={toggleEdit}>
               EDITAR
             </button>
-            <button className="btn btn-sm btn-danger">BORRAR</button>
+            <button className="btn btn-sm btn-danger" onClick={handleRemove}>BORRAR</button>
           </td>
         </tr>
 
