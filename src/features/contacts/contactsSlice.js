@@ -1,4 +1,11 @@
-import { createEntityAdapter, createSlice } from "@reduxjs/toolkit"
+import { createAsyncThunk, createEntityAdapter, createSlice } from "@reduxjs/toolkit"
+import { addDoc, collection } from "firebase/firestore"
+import { db } from "../../firebase/firebase-config"
+
+export const addNewContact = createAsyncThunk("contacts/addNewContact", async (contact) => {
+    const docRef = await addDoc(collection(db, "contacts"), contact)
+    return {...contact, id: docRef.id }
+})
 
 const contactsAdapter = createEntityAdapter()
 
@@ -25,6 +32,11 @@ export const contactsSlice = createSlice({
         removeContact: contactsAdapter.removeOne,
         updateContact: contactsAdapter.updateOne,
     },
+    extraReducers(builder){
+        builder.addCase(addNewContact.fulfilled, (state, action) => {
+            contactsAdapter.addOne(state, action.payload)
+        })
+    }
 })
 
 export default contactsSlice.reducer
