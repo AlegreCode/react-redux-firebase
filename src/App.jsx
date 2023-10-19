@@ -1,7 +1,15 @@
+import { useEffect } from "react"
 import { ContactList } from "./components/ContactList"
 import { NewContactForm } from "./components/NewContactForm"
+import { getContacts } from "./features/contacts/contactsSlice"
+import { useDispatch } from "react-redux"
 
 function App() {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(getContacts())
+  })
 
   return (
     <>
