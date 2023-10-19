@@ -1,10 +1,20 @@
 import { createAsyncThunk, createEntityAdapter, createSlice } from "@reduxjs/toolkit"
-import { addDoc, collection } from "firebase/firestore"
+import { addDoc, collection, getDocs } from "firebase/firestore"
 import { db } from "../../firebase/firebase-config"
 
 export const addNewContact = createAsyncThunk("contacts/addNewContact", async (contact) => {
     const docRef = await addDoc(collection(db, "contacts"), contact)
     return {...contact, id: docRef.id }
+})
+
+export const getContacts = createAsyncThunk("contacts/getContacts", async () => {
+    const contactsSnapshot = await getDocs(collection(db, "contacts"))
+    return contactsSnapshot.docs.map((doc) => {
+        return {
+            id: doc.id,
+          ...doc.data()
+        }
+    })
 })
 
 const contactsAdapter = createEntityAdapter()
@@ -35,6 +45,9 @@ export const contactsSlice = createSlice({
     extraReducers(builder){
         builder.addCase(addNewContact.fulfilled, (state, action) => {
             contactsAdapter.addOne(state, action.payload)
+        }),
+        builder.addCase(getContacts.fulfilled, (state, action) => {
+            contactsAdapter.setAll(state, action.payload)
         })
     }
 })
