@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { removeContact, updateContact } from "../features/contacts/contactsSlice"
+import { deleteContact, updateContact } from "../features/contacts/contactsSlice"
 import { useDispatch } from "react-redux"
 
 export const Contact = ({ data }) => {
@@ -38,7 +38,7 @@ export const Contact = ({ data }) => {
   }
 
   const handleRemove = () => {
-    dispatch(removeContact(contact.id));
+    dispatch(deleteContact(contact.id));
   }
 
   return (
