@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { deleteContact, updateContact } from "../features/contacts/contactsSlice"
+import { deleteContact, editContact } from "../features/contacts/contactsSlice"
 import { useDispatch } from "react-redux"
 
 export const Contact = ({ data }) => {
@@ -33,7 +33,12 @@ export const Contact = ({ data }) => {
   };
 
   const handleSave = () => {
-    dispatch(updateContact({ id:contact.id, changes: contact}))
+    dispatch(editContact({ id: contact.id, changes: {
+      firstname: contact.firstname,
+      lastname: contact.lastname,
+      email: contact.email,
+      phone: contact.phone
+    } }))
     toggleEdit();
   }
 
