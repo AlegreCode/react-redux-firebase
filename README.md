@@ -1,8 +1,27 @@
-# React + Vite
+# Tutorial React - Redux Toolkit - Firebase
+Agenda de contactos
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Tabla de contenidos
 
-Currently, two official plugins are available:
+* [Información general](#información-general)
+* [Tecnologías](#tecnologías)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## Información general
+
+El proyecto consiste en una agenda de contactos en el que el usuario puede crear, actualizar, borrar y leer los datos de contactos. La interfaz está construida con React. Utilizamos Redux Toolkit para gestionar el estado global de la aplicación. Utilizamos Cloud Firestore de Firebase para la persistencia de datos.
+
+## Tecnologías
+
+* [ReacJS](https://react.dev/)
+* [Redux](https://redux.js.org/)
+* [Firebase](https://firebase.google.com/?hl=es)
+
+## Authors
+
+- [AlegreCode](https://github.com/AlegreCode)
+
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
