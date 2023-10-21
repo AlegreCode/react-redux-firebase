@@ -84,21 +84,21 @@ export const Contact = ({ data }) => {
           </td>
           <td>
             <input
-              type="text"
-              name="email"
-              className="form-control form-control-sm"
-              value={contact.email}
-              onChange={handleInputChange}
-            />
+                type="text"
+                name="phone"
+                className="form-control form-control-sm"
+                value={contact.phone}
+                onChange={handleInputChange}
+              />
           </td>
           <td>
             <input
-              type="text"
-              name="phone"
-              className="form-control form-control-sm"
-              value={contact.phone}
-              onChange={handleInputChange}
-            />
+                type="text"
+                name="email"
+                className="form-control form-control-sm"
+                value={contact.email}
+                onChange={handleInputChange}
+              />
           </td>
           <td>
             <button className="btn btn-sm btn-danger" onClick={toggleEdit}>
